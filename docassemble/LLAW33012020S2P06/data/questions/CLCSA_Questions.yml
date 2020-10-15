@@ -18,6 +18,12 @@ fields:
       - Outback (Riverland)
       - West
       - Central
+
+action buttons:
+  - label: Come back later
+    action: http://www.bom.gov.au/sa/forecasts/adelaide.shtml
+    color: warning
+    icon: sign-out-alt
 ---
 question: What type of legal issue do you have?
 fields:
@@ -38,6 +44,12 @@ fields:
       - Mediation (neighbourhood conflicts, disputes): Mediation
         image: mediation
       - Other: Other
+
+action buttons:
+  - label: Come back later
+    action: http://www.bom.gov.au/sa/forecasts/adelaide.shtml
+    color: warning
+    icon: sign-out-alt
 ---
 question: What is your gender?
 fields:
@@ -49,6 +61,12 @@ fields:
       - "Female": Female
         image: female
       - Other
+
+action buttons:
+  - label: Come back later
+    action: http://www.bom.gov.au/sa/forecasts/adelaide.shtml
+    color: warning
+    icon: sign-out-alt
 ---
 question: Do you identify as Aboriginal or Torrens Straight Islander?
 fields:
@@ -58,6 +76,12 @@ fields:
       - Yes
       - No
       - Do not wish to say
+
+action buttons:
+  - label: Come back later
+    action: http://www.bom.gov.au/sa/forecasts/adelaide.shtml
+    color: warning
+    icon: sign-out-alt
 ---
 image sets:
   freepik:

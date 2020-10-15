@@ -20,7 +20,7 @@ fields:
       - Central
 
 action buttons:
-  - label: Come back later
+  - label: Safe Exit
     action: http://www.bom.gov.au/sa/forecasts/adelaide.shtml
     color: warning
     icon: sign-out-alt
@@ -46,7 +46,7 @@ fields:
       - Other: Other
 
 action buttons:
-  - label: Come back later
+  - label: Safe Exit
     action: http://www.bom.gov.au/sa/forecasts/adelaide.shtml
     color: warning
     icon: sign-out-alt
@@ -63,7 +63,7 @@ fields:
       - Other
 
 action buttons:
-  - label: Come back later
+  - label: Safe Exit
     action: http://www.bom.gov.au/sa/forecasts/adelaide.shtml
     color: warning
     icon: sign-out-alt
@@ -78,7 +78,7 @@ fields:
       - Do not wish to say
 
 action buttons:
-  - label: Come back later
+  - label: Safe Exit
     action: http://www.bom.gov.au/sa/forecasts/adelaide.shtml
     color: warning
     icon: sign-out-alt

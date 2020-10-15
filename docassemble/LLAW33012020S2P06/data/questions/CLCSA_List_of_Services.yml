@@ -68,6 +68,10 @@ data:
       - 43 Franklin Street Adelaide SA 5000
     legal issue: 
       - Other
+    gender:
+      - Male
+      - Female
+      - Other
     indigenous:
       - Yes
       - No

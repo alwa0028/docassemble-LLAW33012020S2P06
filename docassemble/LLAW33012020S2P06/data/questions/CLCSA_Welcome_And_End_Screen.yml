@@ -14,11 +14,11 @@ code: |
 ---
 # Welcome screen
 mandatory: true
-question: Welcome to the Community Legal Centre South Australia application. This application will ask a series of questions and provide a list of services based on your needs.
+question: Welcome to the Community Legal Centre South Australia service directory. This application will ask a series of questions and provide you with a list of legal services.
 subquestion: |
   
   ### Privacy Statement: 
-  > Community Legal Centres South Australia is committed to protecting the privacy of your information. Your information will not be stored. Information is gathered in order to generate a list of Community legal centre that is suited for your needs. 
+  > Community Legal Centres South Australia is committed to protecting the privacy of your information. Your information will not be stored. Information is gathered in order to generate a list of Community legal Centres that is suited to your issue. 
   
   ### This application should not be used as professional legal advice:
   > This application is used to help find a suitable Community Legal Centre and should not be used as a replacement for professional legal advice.
@@ -26,7 +26,7 @@ subquestion: |
 buttons:  
   - I agree: continue
   - I do not agree: exit
-    url: https://www.clcsa.org.au/
+    url: http://www.bom.gov.au/sa/forecasts/adelaide.shtml
 ---
 # Final Screen
 mandatory: true
@@ -63,6 +63,7 @@ subquestion: |
 
 buttons:
   - Exit: exit
+    url: http://www.bom.gov.au/sa/forecasts/adelaide.shtml
   - Restart: restart
 ---  
 # Table Block

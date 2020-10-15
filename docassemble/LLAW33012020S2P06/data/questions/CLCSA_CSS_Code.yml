@@ -2,13 +2,6 @@
 include:
   - CLCSA_Welcome_And_End_Screen.yml
 ---
-objects:
-- CLCSAlogo: DAStaticFile.using(filename='CLCSAlogo.jpg')
----
-mandatory: True
-code: |
-  set_parts(logo='<img src="' + CLCSAlogo.url_for() + '" style="height: 50px;">')
----
 default screen parts:
   post: |
     <div style="display: flex; height: 200px; align-items: flex-end; flex-direction: row-reverse">

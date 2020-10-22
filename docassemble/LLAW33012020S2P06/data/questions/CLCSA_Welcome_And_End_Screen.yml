@@ -23,6 +23,9 @@ subquestion: |
   ### This application should not be used as professional legal advice:
   > This application is used to help find a suitable Community Legal Centre and should not be used as a replacement for professional legal advice.
   
+  > This application will only help find a legal service within South Australia.
+  > This application will ask personal questions to help find a legal service for you. Do you agree that your information will be used to find a legal service?
+  
 buttons:  
   - I agree: continue
   - I do not agree: exit
@@ -86,6 +89,8 @@ columns:
       row_item['address']
   - Phone: |
       row_item['phone']
+  - Legal issue: |
+      row_item['legal issue']
 ---
 table: CLCSAdisplay_leftover_list
 rows: CLCSAdisplay_leftovers

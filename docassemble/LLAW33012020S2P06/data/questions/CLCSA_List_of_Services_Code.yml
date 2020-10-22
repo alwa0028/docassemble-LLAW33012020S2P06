@@ -22,7 +22,7 @@ code: |
         for CLCSAselected_issue in CLCSAlegalissue.true_values():
           if CLCSAselected_issue in CLCSAitem['legal issue']:
             # Specialist service gets added regardless of location
-            if CLCSAselected_issue == 'Centrelink' or 'Domestic Violence' or 'Elder Abuse' or 'Environmental' or 'Financial' or 'Homelessness' or 'Migration' or 'Mediation':
+            if CLCSAselected_issue == 'Centrelink' or CLCSAselected_issue == 'Domestic Violence' or CLCSAselected_issue == 'Elder Abuse' or CLCSAselected_issue == 'Environmental' or CLCSAselected_issue == 'Financial' or CLCSAselected_issue == 'Homelessness' or CLCSAselected_issue == 'Migration' or CLCSAselected_issue == 'Mediation':
               if CLCSAadded == False:
                 CLCSAdisplay_data.append(CLCSAitem)
                 CLCSAadded = True
@@ -43,7 +43,7 @@ code: |
 # 2. The service only caters for that gender
 code: |
   CLCSAdisplay_specific_gender.clear()
-  for CLCSAitem in CLCSAdisplay_data:
+  for CLCSAitem in CLCSA_Services:
     if (len(CLCSAitem['gender']) == 1) or ( len(CLCSAitem['gender']) == 2 and 'Other' in CLCSAitem['gender']):
       CLCSAdisplay_specific_gender.append(CLCSAitem)
       CLCSAitem['displayed']
@@ -53,7 +53,7 @@ code: |
 # Display services for indigenous people first
 code: |
   CLCSAdisplay_indigenous.clear()
-  for CLCSAitem in CLCSAdisplay_data:
+  for CLCSAitem in CLCSA_Services:
     if CLCSAindigenous == 'Yes' and CLCSAindigenous in CLCSAitem['indigenous']:
       CLCSAdisplay_indigenous.append(CLCSAitem)
       CLCSAitem['displayed']
@@ -64,7 +64,7 @@ code: |
 # be displayed that hasn't already been displayed.
 code: |
   CLCSAdisplay_leftovers.clear()
-  for CLCSAitem in CLCSAdisplay_data:
+  for CLCSAitem in CLCSA_Services:
     if not CLCSAitem.item('displayed'):
       CLCSAdisplay_leftovers.append(CLCSAitem)
       

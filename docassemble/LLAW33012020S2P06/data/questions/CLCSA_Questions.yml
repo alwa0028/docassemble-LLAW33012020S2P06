@@ -18,9 +18,10 @@ fields:
       - Outback (Riverland)
       - West
       - Central
-
+    none of the above: False
+    
 action buttons:
-  - label: Come back later
+  - label: Safe Exit
     action: http://www.bom.gov.au/sa/forecasts/adelaide.shtml
     color: warning
     icon: sign-out-alt
@@ -44,9 +45,10 @@ fields:
       - Mediation (neighbourhood conflicts, disputes): Mediation
         image: mediation
       - Other: Other
-
+    none of the above: False
+    
 action buttons:
-  - label: Come back later
+  - label: Safe Exit
     action: http://www.bom.gov.au/sa/forecasts/adelaide.shtml
     color: warning
     icon: sign-out-alt
@@ -63,7 +65,7 @@ fields:
       - Other
 
 action buttons:
-  - label: Come back later
+  - label: Safe Exit
     action: http://www.bom.gov.au/sa/forecasts/adelaide.shtml
     color: warning
     icon: sign-out-alt
@@ -78,7 +80,7 @@ fields:
       - Do not wish to say
 
 action buttons:
-  - label: Come back later
+  - label: Safe Exit
     action: http://www.bom.gov.au/sa/forecasts/adelaide.shtml
     color: warning
     icon: sign-out-alt

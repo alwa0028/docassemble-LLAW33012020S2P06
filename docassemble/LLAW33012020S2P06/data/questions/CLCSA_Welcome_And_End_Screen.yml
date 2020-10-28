@@ -63,7 +63,8 @@ subquestion: |
   
   ${CLCSAdisplay_leftover_list}
   % endif
-
+  
+progress: 100
 buttons:
   - Exit: exit
     url: http://www.bom.gov.au/sa/forecasts/adelaide.shtml

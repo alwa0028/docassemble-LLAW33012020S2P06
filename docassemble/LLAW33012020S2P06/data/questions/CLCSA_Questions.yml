@@ -1,4 +1,7 @@
 ---
+features:
+  progress bar: True
+---
 # location question
 question: What is your location?
 subquestion: |
@@ -19,7 +22,8 @@ fields:
       - West
       - Central
     none of the above: False
-    
+
+progress: 20
 action buttons:
   - label: Safe Exit
     action: http://www.bom.gov.au/sa/forecasts/adelaide.shtml
@@ -46,7 +50,8 @@ fields:
         image: mediation
       - Other: Other
     none of the above: False
-    
+
+progress: 40
 action buttons:
   - label: Safe Exit
     action: http://www.bom.gov.au/sa/forecasts/adelaide.shtml
@@ -64,6 +69,7 @@ fields:
         image: female
       - Other
 
+progress: 60
 action buttons:
   - label: Safe Exit
     action: http://www.bom.gov.au/sa/forecasts/adelaide.shtml
@@ -79,6 +85,7 @@ fields:
       - No
       - Do not wish to say
 
+progress: 80
 action buttons:
   - label: Safe Exit
     action: http://www.bom.gov.au/sa/forecasts/adelaide.shtml

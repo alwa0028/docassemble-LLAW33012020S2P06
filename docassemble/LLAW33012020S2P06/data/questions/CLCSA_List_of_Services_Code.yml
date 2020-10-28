@@ -20,7 +20,7 @@ code: |
         #...and if legal issue matches
         # We can have selected more than one legal issue.  We need to check each one
         for CLCSAselected_issue in CLCSAlegalissue.true_values():
-          if CLCSAselected_issue in CLCSAitem['legal issue']:
+          if CLCSAselected_issue in CLCSAitem['legal issue'] or 'Other' in CLCSAitem['legal issue']:
             # Specialist service gets added regardless of location
             if CLCSAselected_issue == 'Centrelink' or CLCSAselected_issue == 'Domestic Violence' or CLCSAselected_issue == 'Elder Abuse' or CLCSAselected_issue == 'Environmental' or CLCSAselected_issue == 'Financial' or CLCSAselected_issue == 'Homelessness' or CLCSAselected_issue == 'Migration' or CLCSAselected_issue == 'Mediation':
               if CLCSAadded == False:
@@ -44,7 +44,10 @@ code: |
 code: |
   CLCSAdisplay_specific_gender.clear()
   for CLCSAitem in CLCSA_Services:
-    if (len(CLCSAitem['gender']) == 1) or ( len(CLCSAitem['gender']) == 2 and 'Other' in CLCSAitem['gender']):
+    if (
+        (len(CLCSAitem['gender']) == 1) or ( len(CLCSAitem['gender']) == 2 and 'Other' in CLCSAitem['gender']) and
+        ( CLCSAgender in CLCSAitem['gender'])
+       ):
       CLCSAdisplay_specific_gender.append(CLCSAitem)
       CLCSAitem['displayed']
       
@@ -65,7 +68,7 @@ code: |
 code: |
   CLCSAdisplay_leftovers.clear()
   for CLCSAitem in CLCSA_Services:
-    if not CLCSAitem.item('displayed'):
+    if not CLCSAitem.item('displayed') and CLCSAitem in CLCSAdisplay_data:
       CLCSAdisplay_leftovers.append(CLCSAitem)
       
   CLCSAdisplay_leftovers.gathered = True

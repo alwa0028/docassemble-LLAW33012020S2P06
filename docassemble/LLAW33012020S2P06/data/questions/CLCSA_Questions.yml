@@ -37,7 +37,7 @@ fields:
     choices:
       - Centrelink: Centrelink
         image: financial
-      - Domestic violence: Domestic violence
+      - Domestic violence: Domestic Violence
       - Elder Abuse: Elder Abuse
       - Environmental: Environmental
       - Financial (personal debt, bankrupcy, mortgage): Financial

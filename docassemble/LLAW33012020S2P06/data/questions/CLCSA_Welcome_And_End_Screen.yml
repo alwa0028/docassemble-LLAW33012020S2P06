@@ -92,6 +92,8 @@ columns:
       row_item['phone']
   - Legal issue: |
       row_item['legal issue']
+  - Location: |
+      row_item['location']
 ---
 table: CLCSAdisplay_leftover_list
 rows: CLCSAdisplay_leftovers
@@ -104,4 +106,8 @@ columns:
       row_item['phone']
   - Legal issue: |
       row_item['legal issue']
+  - Location: |
+      row_item['location']
+  - Added: |
+      row_item['added']
 ---

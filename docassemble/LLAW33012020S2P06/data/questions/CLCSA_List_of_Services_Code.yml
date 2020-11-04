@@ -22,9 +22,20 @@ code: |
         for CLCSAselected_issue in CLCSAlegalissue.true_values():
           if CLCSAselected_issue in CLCSAitem['legal issue'] or 'Other' in CLCSAitem['legal issue']:
             # Specialist service gets added regardless of location
-            if CLCSAselected_issue == 'Centrelink' or CLCSAselected_issue == 'Domestic Violence' or CLCSAselected_issue == 'Elder Abuse' or CLCSAselected_issue == 'Environmental' or CLCSAselected_issue == 'Financial' or CLCSAselected_issue == 'Homelessness' or CLCSAselected_issue == 'Migration' or CLCSAselected_issue == 'Mediation':
+            if ( 
+                  ( CLCSAselected_issue == 'Centrelink' or 
+                    CLCSAselected_issue == 'Domestic Violence' or 
+                    CLCSAselected_issue == 'Elder Abuse' or 
+                    CLCSAselected_issue == 'Environmental' or 
+                    CLCSAselected_issue == 'Financial' or 
+                    CLCSAselected_issue == 'Homelessness' or 
+                    CLCSAselected_issue == 'Migration' or 
+                    CLCSAselected_issue == 'Mediation' ) and
+                  ( CLCSAselected_issue in CLCSAitem['legal issue'])
+                ):
               if CLCSAadded == False:
                 CLCSAdisplay_data.append(CLCSAitem)
+                CLCSAitem['added'] = 'specialist'
                 CLCSAadded = True
             else: 
               # Non-specialist services are added only if in the location.
@@ -34,6 +45,7 @@ code: |
                   # First we need to check it hasn't already been added
                   if CLCSAadded == False:
                     CLCSAdisplay_data.append(CLCSAitem)
+                    CLCSAitem['added'] = 'non-specialist'
                     CLCSAadded = True
       
   CLCSAdisplay_data.gathered = True
@@ -57,7 +69,11 @@ code: |
 code: |
   CLCSAdisplay_indigenous.clear()
   for CLCSAitem in CLCSA_Services:
-    if CLCSAindigenous == 'Yes' and CLCSAindigenous in CLCSAitem['indigenous']:
+    if (
+          ( CLCSAindigenous == 'Yes' or
+            CLCSAindigenous == 'Do not wish to say' ) and 
+          ( not 'No' in CLCSAitem['indigenous'] )
+        ):
       CLCSAdisplay_indigenous.append(CLCSAitem)
       CLCSAitem['displayed']
 

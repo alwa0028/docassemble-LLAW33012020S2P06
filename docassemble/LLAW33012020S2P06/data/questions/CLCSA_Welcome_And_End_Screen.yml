@@ -40,7 +40,7 @@ subquestion: |
   Questions                           |Answers
   ------------------------------------|--------
   Location                            | ${CLCSAlocation.true_values()}
-  Legal Issue                         | ${CLCSAlegalissue.true_values()}
+  Legal Issue                         | ${display_CLCSAlegalissue}
   Gender                              | ${CLCSAgender}
   Aboriginal or Torres Strait Islander| ${CLCSAindigenous}
   
@@ -91,7 +91,7 @@ columns:
   - Phone: |
       row_item['phone']
   - Legal issue: |
-      row_item['legal issue']
+      row_item['display legal issue']
   - Location: |
       row_item['location']
 ---
@@ -105,9 +105,54 @@ columns:
   - Phone: |
       row_item['phone']
   - Legal issue: |
-      row_item['legal issue']
+      row_item['display legal issue']
   - Location: |
-      row_item['location']
+      row_item['display location']
   - Added: |
       row_item['added']
+---
+# Display legal issue as a bullet list.  If there
+# is only one issue, then don't have a single
+# bullet list.
+# We construct the bullet list by creating a string 
+# of HTML commands (markdown doesn't work in code I
+# just found out this morning :-)
+# We save our bullet list to display in a key called
+# 'display legal issue' and we use that in our table.
+code: |
+  # Initialise the display with an empty string.  We'll use
+  # a temp variable here because it's easier to read
+  # The '<ul>' and '<li>' tags that you see are HTML commands
+  # to make a bullet list.  
+  MJFtemp_list = '<ul>'
+
+  # Now add each item to the string as a markdown bullet list item
+  for an_issue in CLCSA_Services[i]['legal issue']:
+    MJFtemp_list = '{}<li>{}</li>'.format(MJFtemp_list, an_issue)
+
+  MJFtemp_list = '{}</ul>'.format(MJFtemp_list)
+  # Now we've added each item, we can assign the temp variable
+  # to the 'real' variable we want displayed
+  CLCSA_Services[i]['display legal issue'] = MJFtemp_list
+---
+# Display locations as a bullet list.
+# I haven't put as many comments in here just in case all the 
+# comments are confusing
+code: |
+  MJFtemp_list = '<ul>'
+
+  for an_issue in CLCSA_Services[i]['location']:
+    MJFtemp_list = '{}<li>{}</li>\n'.format(MJFtemp_list, an_issue)
+  MJFtemp_list = '{}</ul>'.format(MJFtemp_list)
+  CLCSA_Services[i]['display location'] = MJFtemp_list
+---
+# This code does something similar but it works on the
+# CLCSAlegalissue checkbox instead of the data structure
+code: |
+  MJFtemp_list = '<ul>'
+  for an_issue in CLCSAlegalissue.true_values():
+    MJFtemp_list = '{}<li>{}</li>'.format(MJFtemp_list, an_issue)
+
+  MJFtemp_list = '{}</ul>'.format(MJFtemp_list)
+  display_CLCSAlegalissue = MJFtemp_list
 ---

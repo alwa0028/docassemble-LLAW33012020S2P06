@@ -18,13 +18,13 @@ question: Welcome to the Community Legal Centre South Australia service director
 subquestion: |
   
   ### Privacy Statement: 
-  > Community Legal Centres South Australia is committed to protecting the privacy of your information. Your information will not be stored. Information is gathered in order to generate a list of Community legal Centres that is suited to your issue. 
+  > CLCSA aims to protect your data. Your data will not be stored. Data will be deleted at the end of the application. Data is gathered to create a list of services for you. 
   
-  ### This application should not be used as professional legal advice:
-  > This application is used to help find a suitable Community Legal Centre and should not be used as a replacement for professional legal advice.
+  > This application should not be used as professional legal advice.
   
-  > This application will only help find a legal service within South Australia.
-  > This application will ask personal questions to help find a legal service for you. Do you agree that your information will be used to find a legal service?
+  > This application will only find legal services in SA.
+  
+  > This application will ask personal questions. Do you agree?
   
 buttons:  
   - I agree: continue
@@ -33,9 +33,8 @@ buttons:
 ---
 # Final Screen
 mandatory: true
-question: Ending Screen
+question: Thank you for completing this application. Here are your responses,
 subquestion: |
-  Thank you for completing this application. Here are your responses,
   
   Questions                           |Answers
   ------------------------------------|--------

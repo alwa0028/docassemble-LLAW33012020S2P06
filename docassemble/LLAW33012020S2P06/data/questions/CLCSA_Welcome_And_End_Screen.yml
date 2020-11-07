@@ -38,7 +38,7 @@ subquestion: |
   
   Questions                           |Answers
   ------------------------------------|--------
-  Location                            | ${CLCSAlocation.true_values()}
+  Location                            | ${display_CLCSAlocation}
   Legal Issue                         | ${display_CLCSAlegalissue}
   Gender                              | ${CLCSAgender}
   Aboriginal or Torres Strait Islander| ${CLCSAindigenous}
@@ -76,9 +76,9 @@ columns:
   - Name of Service: |
       row_item['name']
   - Address: |
-      row_item['address']
+      row_item['display address']
   - Phone: |
-      row_item['phone']
+      row_item['display phone']
 ---
 table: CLCSAdisplay_indigenous_list
 rows: CLCSAdisplay_indigenous
@@ -86,9 +86,9 @@ columns:
   - Name of Service: |
       row_item['name']
   - Address: |
-      row_item['address']
+      row_item['display address']
   - Phone: |
-      row_item['phone']
+      row_item['display phone']
   - Legal issue: |
       row_item['display legal issue']
   - Location: |
@@ -100,9 +100,9 @@ columns:
   - Name of Service: |
       row_item['name']
   - Address: |
-      row_item['address']
+      row_item['display address']
   - Phone: |
-      row_item['phone']
+      row_item['display phone']
   - Legal issue: |
       row_item['display legal issue']
   - Location: |
@@ -123,35 +123,62 @@ code: |
   # a temp variable here because it's easier to read
   # The '<ul>' and '<li>' tags that you see are HTML commands
   # to make a bullet list.  
-  MJFtemp_list = '<ul>'
+  CLCSAtemp_list = '<ul>'
 
   # Now add each item to the string as a markdown bullet list item
   for an_issue in CLCSA_Services[i]['legal issue']:
-    MJFtemp_list = '{}<li>{}</li>'.format(MJFtemp_list, an_issue)
+    CLCSAtemp_list = '{}<li>{}</li>'.format(CLCSAtemp_list, an_issue)
 
-  MJFtemp_list = '{}</ul>'.format(MJFtemp_list)
+  CLCSAtemp_list = '{}</ul>'.format(CLCSAtemp_list)
   # Now we've added each item, we can assign the temp variable
   # to the 'real' variable we want displayed
-  CLCSA_Services[i]['display legal issue'] = MJFtemp_list
+  CLCSA_Services[i]['display legal issue'] = CLCSAtemp_list
 ---
 # Display locations as a bullet list.
 # I haven't put as many comments in here just in case all the 
 # comments are confusing
 code: |
-  MJFtemp_list = '<ul>'
+  CLCSAtemp_list = '<ul>'
 
   for an_issue in CLCSA_Services[i]['location']:
-    MJFtemp_list = '{}<li>{}</li>\n'.format(MJFtemp_list, an_issue)
-  MJFtemp_list = '{}</ul>'.format(MJFtemp_list)
-  CLCSA_Services[i]['display location'] = MJFtemp_list
+    CLCSAtemp_list = '{}<li>{}</li>\n'.format(CLCSAtemp_list, an_issue)
+  CLCSAtemp_list = '{}</ul>'.format(CLCSAtemp_list)
+  CLCSA_Services[i]['display location'] = CLCSAtemp_list
 ---
 # This code does something similar but it works on the
 # CLCSAlegalissue checkbox instead of the data structure
 code: |
-  MJFtemp_list = '<ul>'
+  CLCSAtemp_list = '<ul>'
   for an_issue in CLCSAlegalissue.true_values():
-    MJFtemp_list = '{}<li>{}</li>'.format(MJFtemp_list, an_issue)
+    CLCSAtemp_list = '{}<li>{}</li>'.format(CLCSAtemp_list, an_issue)
 
-  MJFtemp_list = '{}</ul>'.format(MJFtemp_list)
-  display_CLCSAlegalissue = MJFtemp_list
+  CLCSAtemp_list = '{}</ul>'.format(CLCSAtemp_list)
+  display_CLCSAlegalissue = CLCSAtemp_list
+---
+# Bullet list code for location in checkbox - it works!
+code: |
+  CLCSAtemp_list = '<ul>'
+  for an_issue in CLCSAlocation.true_values():
+    CLCSAtemp_list = '{}<li>{}</li>'.format(CLCSAtemp_list, an_issue)
+
+  CLCSAtemp_list = '{}</ul>'.format(CLCSAtemp_list)
+  display_CLCSAlocation = CLCSAtemp_list
+---
+# Bullet list for phone numbers - it works!
+code: |
+  CLCSAtemp_list = '<ul>'  
+  
+  for an_issue in CLCSA_Services[i]['phone']:
+    CLCSAtemp_list = '{}<li>{}</li>\n'.format(CLCSAtemp_list, an_issue)
+  CLCSAtemp_list = '{}</ul>'.format(CLCSAtemp_list)
+  CLCSA_Services[i]['display phone'] = CLCSAtemp_list
+---
+# Bullet list for address - it works!
+code: |
+  CLCSAtemp_list = '<ul>'  
+  
+  for an_issue in CLCSA_Services[i]['address']:
+    CLCSAtemp_list = '{}<li>{}</li>\n'.format(CLCSAtemp_list, an_issue)
+  CLCSAtemp_list = '{}</ul>'.format(CLCSAtemp_list)
+  CLCSA_Services[i]['display address'] = CLCSAtemp_list
 ---

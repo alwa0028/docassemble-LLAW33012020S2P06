@@ -289,8 +289,10 @@ data:
       - East
       - West
       - Central
-    phone: (08) 8340 9009
-    address: 45 Grenfell Street, Adelaide SA 5000
+    phone: 
+      - (08) 8340 9009
+    address: 
+      - 45 Grenfell Street, Adelaide SA 5000
     legal issue: 
       - Other
     gender:
@@ -303,8 +305,10 @@ data:
   - name: "[Inspiring Determination Independence Growth and Opportunities (INDIGO)](https://www.wlssa.org.au/copy-of-the-womens-specialist-progr)"
     location:
       - South
-    phone: 1300 655 037
-    address: Not Available
+    phone: 
+      - 1300 655 037
+    address: 
+      - Not Available
     legal issue:
       - Other
       - Domestic Violence

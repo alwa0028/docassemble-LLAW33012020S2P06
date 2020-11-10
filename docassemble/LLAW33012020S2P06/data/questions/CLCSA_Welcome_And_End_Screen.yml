@@ -79,6 +79,8 @@ columns:
       row_item['display address']
   - Phone: |
       row_item['display phone']
+  - This service specialises in: |
+      row_item['display legal issue']
 ---
 table: CLCSAdisplay_indigenous_list
 rows: CLCSAdisplay_indigenous
@@ -89,10 +91,8 @@ columns:
       row_item['display address']
   - Phone: |
       row_item['display phone']
-  - Legal issue: |
+  - This service specialises in: |
       row_item['display legal issue']
-  - Location: |
-      row_item['location']
 ---
 table: CLCSAdisplay_leftover_list
 rows: CLCSAdisplay_leftovers
@@ -103,12 +103,8 @@ columns:
       row_item['display address']
   - Phone: |
       row_item['display phone']
-  - Legal issue: |
+  - This service specialises in: |
       row_item['display legal issue']
-  - Location: |
-      row_item['display location']
-  - Added: |
-      row_item['added']
 ---
 # Display legal issue as a bullet list.  If there
 # is only one issue, then don't have a single

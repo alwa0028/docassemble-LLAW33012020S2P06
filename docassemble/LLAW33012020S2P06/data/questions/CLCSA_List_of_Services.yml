@@ -211,7 +211,8 @@ data:
       - Central
     phone: 
       - (08) 8342 1800
-    address: TBA
+    address: 
+      - TBA
     legal issue: 
       - Mediation
     gender:
@@ -350,7 +351,8 @@ data:
       - East
       - West
       - Central
-    phone: (08) 8342 1800 or 1300 886 220 for country callers
+    phone: 
+      - (08) 8342 1800 or 1300 886 220 for country callers
     address:
       - Adelaide Office, 10 Pitt Street, Adelaide SA 5000
       - Medindie Gardens, Unit 2 59 Main North Road, Medindie Gardens SA 5081

@@ -22,7 +22,8 @@ fields:
       - <b>Outback</b><br><ul class="a"><li>Yankalilla</li><li>Alexandrina</li><li>Adelaide Hills</li><li>Barossa</li><li>Gawler</li></ul>: Outback
       - <b>Mid North</b><br><ul class="a"><li>Mount Gambier</li><li>Murray Bridge</li><li>Port Augusta</li><li>Port Lincoln</li><li>Victor Harbor</li><li>Whyalla</li><li>Pirie</li></ul>: Mid North
     none of the above: False
-
+right: |
+ [FILE mapfinal.png, 400px]
 progress: 20
 action buttons:
   - label: Safe Exit
